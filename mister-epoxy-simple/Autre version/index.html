@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- ============================================================ -->
+  <!-- SEO : modifie ces lignes pour Google                         -->
+  <!-- ============================================================ -->
+  <title>Mister Epoxy · Pose de sols en résine époxy · Île-de-France</title>
+  <meta name="description" content="Artisan spécialiste de la pose de sols en résine époxy et béton ciré en Île-de-France. Prestations sur-mesure, devis gratuit, garantie décennale." />
+  <meta name="keywords" content="sol époxy, résine époxy, béton ciré, pose sol résine, sol industriel, revêtement sol, époxy Paris, Île-de-France" />
+
+  <!-- Open Graph (partage Facebook, LinkedIn) -->
+  <meta property="og:title" content="Mister Epoxy · Sols en résine époxy" />
+  <meta property="og:description" content="Artisan spécialiste de la pose de sols en résine époxy et béton ciré en Île-de-France." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- JSON-LD : Google comprend que tu es une entreprise locale -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Mister Epoxy",
+    "description": "Artisan spécialiste de la pose de sols en résine époxy et béton ciré en Île-de-France.",
+    "telephone": "+33123456789",
+    "email": "contact@misterepoxy.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "12 rue des Artisans",
+      "addressLocality": "Saint-Ouen",
+      "postalCode": "93400",
+      "addressCountry": "FR"
+    },
+    "areaServed": "Île-de-France",
+    "priceRange": "€€€",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127"
+    }
+  }
+  </script>
+
+  <!-- Polices Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================ */
+    /* COULEURS : change ces 5 valeurs pour changer tout le site    */
+    /* ============================================================ */
+    :root {
+      --ink: #0a0a0a;        /* noir principal */
+      --paper: #ffffff;      /* blanc de fond */
+      --bone: #f5f3ef;       /* beige chaud */
+      --smoke: #8a8a8a;      /* gris texte secondaire */
+      --line: rgba(10, 10, 10, 0.08);  /* traits de séparation */
+    }
+
+    /* Remise à zéro de base */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* Typographies */
+    .display { font-family: 'Fraunces', serif; font-weight: 400; letter-spacing: -0.02em; }
+    .italic-serif { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; }
+    .eyebrow { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; }
+
+    /* Boutons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 1rem 2rem; font-size: 0.9rem; font-weight: 500;
+      border-radius: 999px; transition: all 0.3s ease; cursor: pointer;
+    }
+    .btn-primary { background: var(--ink); color: var(--paper); }
+    .btn-primary:hover { background: #2a2a2a; transform: translateY(-1px); }
+    .btn-outline { border: 1px solid var(--ink); color: var(--ink); }
+    .btn-outline:hover { background: var(--ink); color: var(--paper); }
+    .btn-inverse { background: var(--paper); color: var(--ink); }
+    .btn-inverse:hover { background: #f0f0f0; }
+
+    /* ============================================================ */
+    /* NAVBAR                                                       */
+    /* ============================================================ */
+    .navbar {
+      position: fixed; top: 1rem; left: 1rem; right: 1rem;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(20px);
+      border-radius: 999px;
+      padding: 0.75rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    @media (min-width: 768px) {
+      .navbar { top: 1.5rem; left: 2rem; right: 2rem; padding: 0.75rem 1.75rem; }
+    }
+
+    .logo { display: flex; align-items: center; gap: 0.75rem; }
+    .logo-mark {
+      width: 2.25rem; height: 2.25rem; border-radius: 50%;
+      background: var(--ink); color: var(--paper);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fraunces', serif; font-style: italic;
+    }
+    .logo-text { font-family: 'Fraunces', serif; font-weight: 500; letter-spacing: -0.01em; }
+
+    .nav-links { display: none; gap: 2rem; }
+    @media (min-width: 1024px) { .nav-links { display: flex; } }
+    .nav-links a { font-size: 0.9rem; position: relative; }
+    .nav-links a::after {
+      content: ''; position: absolute; left: 0; bottom: -4px;
+      width: 0; height: 1px; background: var(--ink); transition: width 0.3s;
+    }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta { display: none; font-size: 0.9rem; font-weight: 500; }
+    @media (min-width: 768px) { .nav-cta { display: inline-flex; align-items: center; gap: 0.25rem; } }
+
+    /* ============================================================ */
+    /* HERO                                                         */
+    /* ============================================================ */
+    .hero { min-height: 100vh; padding: 8rem 1.5rem 0; display: flex; flex-direction: column; }
+    @media (min-width: 768px) { .hero { padding: 10rem 2.5rem 0; } }
+
+    .hero-grid {
+      flex: 1; display: grid; gap: 2rem; padding-bottom: 4rem;
+      max-width: 1400px; margin: 0 auto; width: 100%;
+    }
+    @media (min-width: 1024px) {
+      .hero-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    }
+
+    .hero-label {
+      display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem;
+    }
+    .hero-label-line { width: 2rem; height: 1px; background: var(--ink); }
+
+    .hero-title {
+      font-family: 'Fraunces', serif; font-weight: 400;
+      font-size: clamp(2.5rem, 7vw, 6rem);
+      line-height: 0.95; letter-spacing: -0.03em; margin-bottom: 2rem;
+    }
+
+    .hero-desc {
+      max-width: 28rem; margin-bottom: 2.5rem;
+      color: var(--smoke); line-height: 1.65;
+    }
+
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+    .hero-img {
+      position: relative; overflow: hidden;
+      height: 400px; margin-top: 2rem;
+    }
+    @media (min-width: 768px) { .hero-img { height: 500px; margin-top: 0; } }
+    @media (min-width: 1024px) { .hero-img { height: 620px; } }
+    .hero-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+    .hero-img:hover img { transform: scale(1.03); }
+
+    /* Stats */
+    .stats {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: grid; grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 768px) { .stats { grid-template-columns: repeat(4, 1fr); } }
+    .stat {
+      padding: 2rem 1.5rem;
+      border-right: 1px solid var(--line);
+    }
+    @media (min-width: 768px) { .stat { padding: 2rem 2.5rem; } }
+    .stat:last-child { border-right: none; }
+    .stat-number { font-family: 'Fraunces', serif; font-size: clamp(2rem, 3vw, 2.5rem); }
+    .stat-suffix { font-family: 'Fraunces', serif; font-style: italic; font-size: 1rem; color: var(--smoke); }
+    .stat-label { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--smoke); margin-top: 0.5rem; }
+
+    /* ============================================================ */
+    /* MARQUEE                                                      */
+    /* ============================================================ */
+    .marquee {
+      background: var(--ink); color: var(--paper);
+      padding: 3.5rem 0; overflow: hidden;
+    }
+    .marquee-track {
+      display: flex; gap: 3rem; white-space: nowrap;
+      animation: scroll 40s linear infinite;
+      width: max-content;
+    }
+    .marquee-track span {
+      font-family: 'Fraunces', serif; font-size: clamp(2rem, 4vw, 3.5rem);
+      display: inline-flex; gap: 3rem; align-items: center;
+    }
+    .marquee-separator { color: rgba(255, 255, 255, 0.4); font-style: italic; }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-33.33%); }
+    }
+
+    /* ============================================================ */
+    /* SECTIONS GÉNÉRIQUES                                          */
+    /* ============================================================ */
+    .section { padding: 6rem 1.5rem; }
+    @media (min-width: 768px) { .section { padding: 10rem 2.5rem; } }
+    .section-dark { background: var(--ink); color: var(--paper); }
+    .section-light { background: var(--bone); }
+    .container { max-width: 1400px; margin: 0 auto; }
+
+    .section-header { margin-bottom: 4rem; }
+    .section-label {
+      display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem;
+    }
+    .section-label-num { font-family: 'Fraunces', serif; font-style: italic; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; }
+    .section-label-text { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 500; }
+    .section-title {
+      font-family: 'Fraunces', serif; font-size: clamp(2rem, 4.5vw, 4rem);
+      line-height: 1.05; letter-spacing: -0.02em;
+    }
+    .section-dark .section-label-num,
+    .section-dark .section-label-text { color: rgba(255, 255, 255, 0.5); }
+
+    /* ============================================================ */
+    /* EXPERTISE                                                    */
+    /* ============================================================ */
+    .expertise-grid { display: grid; gap: 3rem; }
+    @media (min-width: 1024px) { .expertise-grid { grid-template-columns: 5fr 7fr; gap: 5rem; align-items: center; } }
+
+    .expertise-img { height: 500px; overflow: hidden; }
+    @media (min-width: 768px) { .expertise-img { height: 620px; } }
+    .expertise-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+    .expertise-img:hover img { transform: scale(1.03); }
+
+    .expertise-text p { color: var(--smoke); margin-bottom: 1.5rem; max-width: 36rem; line-height: 1.7; }
+
+    .highlights {
+      display: grid; gap: 2rem; border-top: 1px solid var(--line); padding-top: 2.5rem; margin-top: 3rem;
+    }
+    @media (min-width: 640px) { .highlights { grid-template-columns: repeat(3, 1fr); } }
+    .highlight h3 { font-family: 'Fraunces', serif; font-size: 1.05rem; font-weight: 500; margin-bottom: 0.5rem; }
+    .highlight p { font-size: 0.875rem; color: var(--smoke); }
+
+    /* ============================================================ */
+    /* SERVICES (cartes)                                            */
+    /* ============================================================ */
+    .services-intro { display: grid; gap: 2.5rem; margin-bottom: 5rem; }
+    @media (min-width: 1024px) { .services-intro { grid-template-columns: 1fr 1fr; align-items: end; } }
+    .services-intro p { max-width: 28rem; color: rgba(255, 255, 255, 0.65); line-height: 1.7; }
+
+    .services-grid {
+      display: grid; border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    @media (min-width: 768px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .service-card {
+      padding: 2.5rem; min-height: 320px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+      transition: background 0.4s ease;
+    }
+    .service-card:hover { background: rgba(255, 255, 255, 0.03); }
+    .service-num { color: rgba(255, 255, 255, 0.4); font-family: 'Fraunces', serif; font-style: italic; font-size: 0.75rem; letter-spacing: 0.15em; display: block; margin-bottom: 2rem; }
+    .service-card h3 { font-family: 'Fraunces', serif; font-size: 1.5rem; margin-bottom: 1rem; }
+    .service-card p { color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; line-height: 1.7; }
+
+    /* ============================================================ */
+    /* PROJETS                                                      */
+    /* ============================================================ */
+    .projects-grid { display: grid; gap: 1.5rem; }
+    @media (min-width: 768px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .project { }
+    .project.wide { grid-column: span 1; }
+    @media (min-width: 768px) { .project.wide { grid-column: span 2; } }
+    .project-img { overflow: hidden; height: 440px; margin-bottom: 1rem; }
+    .project.wide .project-img { height: 560px; }
+    .project-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+    .project-img:hover img { transform: scale(1.05); }
+    .project-info { display: flex; justify-content: space-between; align-items: start; gap: 1.5rem; }
+    .project h3 { font-family: 'Fraunces', serif; font-size: 1.35rem; }
+    .project-place { color: var(--smoke); font-size: 0.875rem; margin-top: 0.25rem; }
+    .project-year { color: var(--smoke); font-family: 'Fraunces', serif; font-style: italic; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; padding-top: 0.25rem; }
+
+    /* ============================================================ */
+    /* PROCESSUS                                                    */
+    /* ============================================================ */
+    .process-list { border-top: 1px solid rgba(255, 255, 255, 0.15); }
+    .process-item {
+      display: grid; gap: 1.5rem; padding: 2.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      transition: padding 0.3s ease;
+    }
+    @media (min-width: 768px) {
+      .process-item { grid-template-columns: 1fr 4fr 7fr; }
+    }
+    .process-num { font-family: 'Fraunces', serif; font-style: italic; font-size: 1.1rem; color: rgba(255, 255, 255, 0.5); }
+    .process-title { font-family: 'Fraunces', serif; font-size: clamp(1.5rem, 2.5vw, 2rem); transition: transform 0.4s ease; }
+    .process-item:hover .process-title { transform: translateX(0.5rem); }
+    .process-desc { color: rgba(255, 255, 255, 0.7); line-height: 1.7; }
+
+    /* ============================================================ */
+    /* TEMOIGNAGES                                                  */
+    /* ============================================================ */
+    .testimonials-grid { display: grid; gap: 4rem; max-width: 1100px; margin: 0 auto; }
+    @media (min-width: 768px) { .testimonials-grid { grid-template-columns: repeat(2, 1fr); } }
+    .testimonial-quote-mark { font-family: 'Fraunces', serif; font-size: 2.5rem; line-height: 0.5; margin-bottom: 1.5rem; }
+    .testimonial blockquote { font-family: 'Fraunces', serif; font-size: clamp(1.15rem, 1.8vw, 1.5rem); line-height: 1.45; margin-bottom: 2rem; letter-spacing: -0.01em; }
+    .testimonial-author { display: flex; align-items: center; gap: 0.75rem; }
+    .testimonial-author-line { width: 2rem; height: 1px; background: var(--ink); }
+    .testimonial-name { font-size: 0.875rem; font-weight: 500; }
+    .testimonial-role { font-size: 0.75rem; color: var(--smoke); }
+
+    /* ============================================================ */
+    /* FAQ                                                          */
+    /* ============================================================ */
+    .faq-grid { display: grid; gap: 2.5rem; max-width: 1200px; margin: 0 auto; }
+    @media (min-width: 1024px) { .faq-grid { grid-template-columns: 5fr 7fr; gap: 3rem; } }
+
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-q {
+      width: 100%; padding: 1.5rem 0;
+      display: flex; justify-content: space-between; align-items: center; gap: 1.5rem;
+      text-align: left; font-family: 'Fraunces', serif; font-size: 1.1rem;
+    }
+    .faq-toggle { flex-shrink: 0; transition: transform 0.5s; }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+    .faq-a {
+      overflow: hidden; max-height: 0; opacity: 0;
+      transition: max-height 0.5s, opacity 0.5s;
+      color: var(--smoke); font-size: 0.95rem; line-height: 1.7;
+      padding-right: 3rem;
+    }
+    .faq-item.open .faq-a { max-height: 400px; opacity: 1; padding-bottom: 1.5rem; }
+
+    /* ============================================================ */
+    /* CONTACT                                                      */
+    /* ============================================================ */
+    .contact-grid { display: grid; gap: 4rem; max-width: 1200px; margin: 0 auto; }
+    @media (min-width: 1024px) { .contact-grid { grid-template-columns: 5fr 7fr; gap: 4rem; } }
+
+    .contact-info p { max-width: 28rem; color: rgba(255, 255, 255, 0.65); line-height: 1.7; margin-bottom: 3rem; }
+
+    .contact-detail {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 1.25rem 0;
+      display: flex; justify-content: space-between; gap: 1.5rem; align-items: center;
+    }
+    .contact-detail-label { color: rgba(255, 255, 255, 0.5); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; }
+    .contact-detail-value { font-size: 0.875rem; text-align: right; }
+
+    .form-grid { display: grid; gap: 1.5rem; }
+    @media (min-width: 768px) { .form-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; } }
+
+    .input {
+      width: 100%; padding: 0.75rem 0;
+      background: transparent; border: none; border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--paper); font-family: inherit; font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    .input:focus { outline: none; border-bottom-color: var(--paper); }
+    .input::placeholder { color: rgba(255, 255, 255, 0.5); }
+    select.input option { background: var(--ink); }
+    textarea.input { resize: none; min-height: 100px; }
+
+    .form-footer {
+      margin-top: 2.5rem; display: flex; flex-wrap: wrap;
+      justify-content: space-between; align-items: center; gap: 1.5rem;
+    }
+    .form-notice { font-size: 0.75rem; color: rgba(255, 255, 255, 0.4); }
+
+    /* ============================================================ */
+    /* FOOTER                                                       */
+    /* ============================================================ */
+    footer { padding: 5rem 1.5rem 2.5rem; }
+    @media (min-width: 768px) { footer { padding: 5rem 2.5rem 2.5rem; } }
+    .footer-top {
+      display: grid; gap: 2.5rem; padding-bottom: 4rem;
+      border-bottom: 1px solid var(--line);
+    }
+    @media (min-width: 768px) { .footer-top { grid-template-columns: 2fr 1fr 1fr; } }
+    .footer-brand h3 {
+      font-family: 'Fraunces', serif; font-weight: 400;
+      font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1; letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+    }
+    .footer-brand p { max-width: 24rem; color: var(--smoke); font-size: 0.95rem; line-height: 1.7; }
+    .footer h4 { font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--smoke); margin-bottom: 1.5rem; }
+    .footer ul li { margin-bottom: 0.75rem; font-size: 0.875rem; }
+    .footer-bottom {
+      padding-top: 2.5rem; display: flex; flex-direction: column;
+      justify-content: space-between; gap: 1rem;
+    }
+    @media (min-width: 768px) { .footer-bottom { flex-direction: row; align-items: center; } }
+    .footer-bottom p, .footer-bottom a { font-size: 0.75rem; color: var(--smoke); }
+    .footer-bottom .footer-links { display: flex; gap: 1.5rem; }
+
+    /* Underline effect on links */
+    .link { position: relative; }
+    .link::after {
+      content: ''; position: absolute; left: 0; bottom: -2px;
+      width: 0; height: 1px; background: currentColor; transition: width 0.3s;
+    }
+    .link:hover::after { width: 100%; }
+
+    /* Animations au scroll */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================ -->
+  <!-- NAVBAR                                                       -->
+  <!-- Ici tu peux changer le logo : remplace le contenu de         -->
+  <!-- .logo ci-dessous                                             -->
+  <!-- ============================================================ -->
+  <nav class="navbar" aria-label="Navigation principale">
+    <a href="#top" class="logo" aria-label="Mister Epoxy - Accueil">
+      <img src="Images/Mister epoxy copie.png" alt="Mister Epoxy" style="height: 40px;">
+    </a>
+
+    <div class="nav-links">
+      <a href="#expertise">Expertise</a>
+      <a href="#prestations">Prestations</a>
+      <a href="#projets">Projets</a>
+      <a href="#processus">Processus</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <a href="#contact" class="nav-cta">Devis gratuit →</a>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- HERO                                                         -->
+  <!-- ============================================================ -->
+  <section id="top" class="hero" aria-label="Présentation">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-label reveal">
+          <span class="hero-label-line"></span>
+          <span class="eyebrow">Artisan depuis 2024 · Île-de-France</span>
+        </div>
+        <h1 class="hero-title reveal">
+          Le sol,<br>
+          <span class="italic-serif">pièce maîtresse</span><br>
+          de l'espace.
+        </h1>
+        <p class="hero-desc reveal">
+          Mister Epoxy pose des revêtements en résine époxy sur mesure,
+          pour des intérieurs particuliers et professionnels où chaque surface devient une signature.
+        </p>
+        <div class="hero-ctas reveal">
+          <a href="#contact" class="btn btn-primary">Demander un devis →</a>
+          <a href="#projets" class="btn btn-outline">Voir nos projets</a>
+        </div>
+      </div>
+      <div class="hero-img reveal">
+        <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=2000&q=80"
+             alt="Sol en résine époxy haut de gamme dans un intérieur contemporain">
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-number">10</span><span class="stat-suffix">ans</span>
+        <div class="stat-label">d'expertise artisanale</div>
+      </div>
+      <div class="stat">
+        <span class="stat-number">540</span><span class="stat-suffix">+</span>
+        <div class="stat-label">projets livrés</div>
+      </div>
+      <div class="stat">
+        <span class="stat-number">4.9</span><span class="stat-suffix">/5</span>
+        <div class="stat-label">satisfaction client</div>
+      </div>
+      <div class="stat">
+        <span class="stat-number">10</span><span class="stat-suffix">ans</span>
+        <div class="stat-label">de garantie décennale</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- MARQUEE (texte défilant)                                     -->
+  <!-- ============================================================ -->
+  <section class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Époxy monochrome <span class="marquee-separator">—</span></span>
+      <span>Résine décorative <span class="marquee-separator">—</span></span>
+      <span>Effet métallique <span class="marquee-separator">—</span></span>
+      <span>Marbré nacré <span class="marquee-separator">—</span></span>
+      <span>Sol industriel <span class="marquee-separator">—</span></span>
+      <span>Époxy monochrome <span class="marquee-separator">—</span></span>
+      <span>Résine décorative <span class="marquee-separator">—</span></span>
+      <span>Effet métallique <span class="marquee-separator">—</span></span>
+      <span>Marbré nacré <span class="marquee-separator">—</span></span>
+      <span>Sol industriel <span class="marquee-separator">—</span></span>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- EXPERTISE                                                    -->
+  <!-- ============================================================ -->
+  <section id="expertise" class="section">
+    <div class="container">
+      <div class="expertise-grid">
+        <div class="expertise-img reveal">
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1400&q=80"
+               alt="Artisan en pleine pose de résine époxy">
+        </div>
+        <div class="expertise-text">
+          <div class="section-label reveal">
+            <span class="section-label-num italic-serif">01 —</span>
+            <span class="section-label-text">Notre expertise</span>
+          </div>
+          <h2 class="section-title reveal">
+            Une <span class="italic-serif">matière noble</span>,<br>
+            un geste précis.
+          </h2>
+          <div class="reveal" style="margin-top: 2.5rem;">
+            <p>La résine époxy ne pardonne rien. Une préparation imparfaite, un mauvais dosage, un coup de rouleau hésitant — tout se voit. C'est pourquoi nous avons fait de la pose un métier entier, pas une prestation annexe.</p>
+            <p>Chaque chantier est une rencontre : avec votre espace, votre lumière, vos usages. Nous concevons le sol qui va durer, vieillir bien, et traverser les tendances sans s'essouffler.</p>
+          </div>
+          <div class="highlights reveal">
+            <div class="highlight">
+              <h3>Matériaux</h3>
+              <p>Résines professionnelles certifiées, conformes aux normes européennes.</p>
+            </div>
+            <div class="highlight">
+              <h3>Application</h3>
+              <p>Pose traditionnelle à la truelle, au rouleau et au pinceau selon la finition.</p>
+            </div>
+            <div class="highlight">
+              <h3>Garantie</h3>
+              <p>Décennale sur tous nos chantiers, assurance Qualibat à jour.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PRESTATIONS                                                  -->
+  <!-- ============================================================ -->
+  <section id="prestations" class="section section-dark">
+    <div class="container">
+      <div class="services-intro">
+        <div>
+          <div class="section-label reveal">
+            <span class="section-label-num italic-serif">02 —</span>
+            <span class="section-label-text">Prestations</span>
+          </div>
+          <h2 class="section-title reveal">
+            Six manières<br>
+            de <span class="italic-serif">redéfinir</span> un sol.
+          </h2>
+        </div>
+        <p class="reveal">De l'époxy brillant à l'aspect industriel du béton ciré, nous adaptons la technique au lieu. Pas l'inverse.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <span class="service-num">01</span>
+          <h3>Résine époxy coulée</h3>
+          <p>Revêtement bicomposant autolissant, application en une ou plusieurs couches. Rendu miroir, sans joint, d'une durabilité exceptionnelle.</p>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-num">02</span>
+          <h3>Béton ciré</h3>
+          <p>Finition minérale contemporaine, posée au couteau. Idéale pour salons, salles de bain, cuisines et espaces professionnels.</p>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-num">03</span>
+          <h3>Époxy métallique</h3>
+          <p>Pigments métalliques en suspension pour un effet marbré, nacré ou doré. Chaque sol est unique, jamais reproduit à l'identique.</p>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-num">04</span>
+          <h3>Résine décorative</h3>
+          <p>Paillettes, flocons, inclusions de couleur. Pour donner une personnalité forte à un espace d'exposition ou un commerce.</p>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-num">05</span>
+          <h3>Rénovation de sols</h3>
+          <p>Diagnostic, ponçage, ragréage et reprise complète. Nous intervenons sur béton, carrelage ou ancien revêtement dégradé.</p>
+        </article>
+        <article class="service-card reveal">
+          <span class="service-num">06</span>
+          <h3>Étanchéité & protection</h3>
+          <p>Traitement imperméabilisant à base de résine pour caves, terrasses, zones humides. Protection longue durée certifiée.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PROJETS                                                      -->
+  <!-- ============================================================ -->
+  <section id="projets" class="section">
+    <div class="container">
+      <div class="services-intro">
+        <div>
+          <div class="section-label reveal">
+            <span class="section-label-num italic-serif">03 —</span>
+            <span class="section-label-text">Projets récents</span>
+          </div>
+          <h2 class="section-title reveal">
+            Chaque surface<br>
+            <span class="italic-serif">a son histoire.</span>
+          </h2>
+        </div>
+        <p class="reveal" style="color: var(--smoke);">Une sélection de projets livrés en 2023 et 2024, allant du loft particulier au commerce de luxe.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project wide reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=80" alt="Loft résidentiel, Paris 3e, béton ciré gris perle">
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>Loft résidentiel</h3>
+              <p class="project-place">Paris · 3e · Béton ciré gris perle</p>
+            </div>
+            <span class="project-year">— 2024</span>
+          </div>
+        </article>
+        <article class="project reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?auto=format&fit=crop&w=1200&q=80" alt="Showroom automobile, Neuilly-sur-Seine, époxy métallique bronze">
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>Showroom automobile</h3>
+              <p class="project-place">Neuilly-sur-Seine · Époxy métallique bronze</p>
+            </div>
+            <span class="project-year">— 2024</span>
+          </div>
+        </article>
+        <article class="project reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=1200&q=80" alt="Restaurant gastronomique, Paris 8e, résine marbrée noire">
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>Restaurant gastronomique</h3>
+              <p class="project-place">Paris · 8e · Résine marbrée noire</p>
+            </div>
+            <span class="project-year">— 2023</span>
+          </div>
+        </article>
+        <article class="project wide reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=80" alt="Maison de maître, Versailles, époxy blanc nacré">
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>Maison de maître</h3>
+              <p class="project-place">Versailles · Époxy blanc nacré</p>
+            </div>
+            <span class="project-year">— 2024</span>
+          </div>
+        </article>
+        <article class="project reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1600566753086-00f18fe6ba68?auto=format&fit=crop&w=1200&q=80" alt="Atelier d'artiste, Saint-Ouen, époxy uni gris béton">
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>Atelier d'artiste</h3>
+              <p class="project-place">Saint-Ouen · Époxy uni gris béton</p>
+            </div>
+            <span class="project-year">— 2023</span>
+          </div>
+        </article>
+        <article class="project reveal">
+          <div class="project-img">
+            <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?auto=format&fit=crop&w=1200&q=80" alt="Boutique de luxe, Champs-Élysées, résine dorée effet lave">
+          </div>
+          <div class="project-info">
+            <div>
+              <h3>Boutique de luxe</h3>
+              <p class="project-place">Champs-Élysées · Résine dorée effet lave</p>
+            </div>
+            <span class="project-year">— 2024</span>
+          </div>
+        </article>
+      </div>
+
+      <div style="margin-top: 4rem; text-align: center;" class="reveal">
+        <a href="#contact" class="btn btn-outline">Discutons de votre projet →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PROCESSUS                                                    -->
+  <!-- ============================================================ -->
+  <section id="processus" class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal">
+          <span class="section-label-num italic-serif">04 —</span>
+          <span class="section-label-text">Méthode</span>
+        </div>
+        <h2 class="section-title reveal" style="max-width: 40rem;">
+          De la première visite<br>
+          à la <span class="italic-serif">dernière passe</span>.
+        </h2>
+      </div>
+
+      <ol class="process-list">
+        <li class="process-item reveal">
+          <span class="process-num">01</span>
+          <h3 class="process-title">Rencontre</h3>
+          <p class="process-desc">Vous nous parlez de votre espace, de vos envies, de vos contraintes. Nous écoutons, nous posons les bonnes questions.</p>
+        </li>
+        <li class="process-item reveal">
+          <span class="process-num">02</span>
+          <h3 class="process-title">Étude & devis</h3>
+          <p class="process-desc">Visite technique gratuite. Nous mesurons, nous diagnostiquons le support et nous remettons un devis détaillé sous 72h.</p>
+        </li>
+        <li class="process-item reveal">
+          <span class="process-num">03</span>
+          <h3 class="process-title">Préparation</h3>
+          <p class="process-desc">70% du résultat se joue ici. Ponçage, aspiration, ragréage, primaire d'accrochage — tout est inspecté avant la pose.</p>
+        </li>
+        <li class="process-item reveal">
+          <span class="process-num">04</span>
+          <h3 class="process-title">Application</h3>
+          <p class="process-desc">Pose artisanale en 2 à 4 couches selon la finition. Nos équipes travaillent dans le silence, sans précipitation.</p>
+        </li>
+        <li class="process-item reveal">
+          <span class="process-num">05</span>
+          <h3 class="process-title">Remise des clés</h3>
+          <p class="process-desc">Séchage sous 48h, puis livraison du sol avec notice d'entretien, attestation de garantie et photographies du chantier.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+  <!-- ============================================================ -->
+  <!-- FAQ                                                          -->
+  <!-- ============================================================ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <div class="faq-grid">
+        <div>
+          <div class="section-label reveal">
+            <span class="section-label-num italic-serif">06 —</span>
+            <span class="section-label-text">Questions</span>
+          </div>
+          <h2 class="section-title reveal">
+            Tout ce que vous<br>
+            <span class="italic-serif">devez savoir.</span>
+          </h2>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>Combien de temps dure un chantier type ?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-a">Pour une pièce de 30 à 50 m², comptez entre 2 et 4 jours sur place, plus 48 à 72h de séchage avant remise en service.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>Quel est le budget à prévoir ?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-a">Nos tarifs s'échelonnent entre 80 et 180 €/m² selon la finition, l'état du support et la complexité du chantier. Chaque devis est gratuit et sans engagement.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>Le sol époxy convient-il aux pièces humides ?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-a">Oui. L'époxy est totalement imperméable et parfaitement adapté aux cuisines, salles de bain, caves et terrasses.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>Dans quelles zones intervenez-vous ?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-a">Nous couvrons l'ensemble de l'Île-de-France : Paris intra-muros, Hauts-de-Seine, Val-de-Marne, Seine-Saint-Denis, Yvelines et Essonne.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>Quelle est la durée de vie d'un sol en résine ?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-a">Un sol correctement posé et entretenu dure entre 15 et 25 ans. Nos chantiers bénéficient d'une garantie décennale complète.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+              <span>Proposez-vous une visite avant devis ?</span>
+              <span class="faq-toggle">+</span>
+            </button>
+            <div class="faq-a">Systématiquement. La visite technique gratuite nous permet d'évaluer le support et de vous présenter des échantillons de finitions.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- CONTACT                                                      -->
+  <!-- ============================================================ -->
+  <section id="contact" class="section section-dark">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-label reveal">
+            <span class="section-label-num italic-serif">07 —</span>
+            <span class="section-label-text">Contact</span>
+          </div>
+          <h2 class="section-title reveal">
+            Parlons de<br>
+            <span class="italic-serif">votre projet.</span>
+          </h2>
+          <p class="reveal" style="margin-top: 2.5rem;">Un mot, un plan, une envie. Nous vous répondons personnellement sous 24 heures ouvrées avec une première estimation et un créneau de visite.</p>
+
+          <div>
+            <div class="contact-detail reveal">
+              <span class="contact-detail-label">Téléphone</span>
+              <a href="tel:+33123456789" class="contact-detail-value link">+33 (0)1 23 45 67 89</a>
+            </div>
+            <div class="contact-detail reveal">
+              <span class="contact-detail-label">Email</span>
+              <a href="mailto:contact@misterepoxy.fr" class="contact-detail-value link">contact@misterepoxy.fr</a>
+            </div>
+            <div class="contact-detail reveal">
+              <span class="contact-detail-label">Atelier</span>
+              <span class="contact-detail-value">12 rue des Artisans, 93400 Saint-Ouen</span>
+            </div>
+            <div class="contact-detail reveal">
+              <span class="contact-detail-label">Horaires</span>
+              <span class="contact-detail-value">Lun–Ven · 8h – 18h</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="reveal" onsubmit="handleSubmit(event)" novalidate>
+          <div class="form-grid">
+            <div class="form-row">
+              <input type="text" placeholder="Votre nom" required class="input" />
+              <input type="email" placeholder="Votre email" required class="input" />
+            </div>
+            <div class="form-row">
+              <input type="tel" placeholder="Téléphone" class="input" />
+              <input type="text" placeholder="Surface approximative (m²)" class="input" />
+            </div>
+            <select class="input">
+              <option value="">Type de projet</option>
+              <option>Résine époxy coulée</option>
+              <option>Époxy métallique</option>
+              <option>Résine décorative</option>
+              <option>Autre / à définir</option>
+            </select>
+            <textarea placeholder="Décrivez votre projet" rows="4" required class="input"></textarea>
+          </div>
+          <div class="form-footer">
+            <p class="form-notice">Gratuit · Sans engagement · Réponse sous 24h</p>
+            <button type="submit" class="btn btn-inverse">Envoyer →</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER                                                       -->
+  <!-- ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Mister<br><span class="italic-serif">Epoxy.</span></h3>
+          <p>Artisan de sols en résine époxy et béton ciré. Île-de-France. Depuis 2014.</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#expertise" class="link">Expertise</a></li>
+            <li><a href="#prestations" class="link">Prestations</a></li>
+            <li><a href="#projets" class="link">Projets</a></li>
+            <li><a href="#processus" class="link">Processus</a></li>
+            <li><a href="#faq" class="link">FAQ</a></li>
+            <li><a href="#contact" class="link">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+33123456789" class="link">+33 (0)1 23 45 67 89</a></li>
+            <li><a href="mailto:contact@misterepoxy.fr" class="link">contact@misterepoxy.fr</a></li>
+            <li style="color: var(--smoke);">12 rue des Artisans<br>93400 Saint-Ouen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Mister Epoxy · SIRET 000 000 000 00000 · Qualibat · Garantie décennale</p>
+        <div class="footer-links">
+          <a href="#" class="link">Mentions légales</a>
+          <a href="#" class="link">Politique de confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================ -->
+  <!-- SCRIPTS (interactivité)                                      -->
+  <!-- ============================================================ -->
+  <script>
+    // FAQ : ouvrir/fermer
+    function toggleFaq(button) {
+      const item = button.parentElement;
+      item.classList.toggle('open');
+    }
+
+    // Formulaire (démo : affiche juste un merci)
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert('Merci ! Votre message a bien été envoyé. (Note : pour que le formulaire envoie vraiment des emails, il faut le brancher à un service comme Formspree — voir README.)');
+      e.target.reset();
+    }
+
+    // Animations au scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -80px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
