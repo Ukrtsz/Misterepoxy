@@ -1066,9 +1066,10 @@
           </div>
         </div>
 
-        <form class="reveal contact-form" id="contact-form" name="contact" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-          <input type="hidden" name="form-name" value="contact">
-          <input type="hidden" name="bot-field" style="display:none;">
+        <form class="reveal contact-form" id="contact-form" novalidate>
+          <input type="hidden" name="access_key" value="32361082-94bb-4c16-929a-9daabfb434e8">
+          <input type="hidden" name="subject" value="Nouveau contact — Mister Epoxy">
+          <input type="hidden" name="from_name" value="Mister Epoxy">
           <div class="form-grid">
             <div class="form-row">
               <input type="text" name="nom" placeholder="Votre nom" required class="input" />
@@ -1154,16 +1155,22 @@
       e.preventDefault();
       const form = e.target;
       const data = new FormData(form);
+      const json = Object.fromEntries(data.entries());
 
-      fetch('/', {
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(data).toString()
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(json)
       })
-      .then(() => {
-        document.getElementById('confirm-modal').classList.add('open');
-        form.reset();
-        document.getElementById('autre-detail').style.display = 'none';
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          document.getElementById('confirm-modal').classList.add('open');
+          form.reset();
+          document.getElementById('autre-detail').style.display = 'none';
+        } else {
+          alert("Une erreur est survenue. Merci de nous contacter directement à contact@misterepoxy.fr");
+        }
       })
       .catch(() => {
         alert("Une erreur est survenue. Merci de nous contacter directement à contact@misterepoxy.fr");
